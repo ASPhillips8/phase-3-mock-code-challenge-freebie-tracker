@@ -6,4 +6,11 @@ class Dev < ActiveRecord::Base
     self.freebies.exists?(item_name: item_name)
   end
 
+  def give_away(dev, freebie)
+    if self.freebies.include?(freebie)
+      freebie.update(dev: dev)
+    else
+      puts "Have nothing to give"
+    end
+  end
 end
