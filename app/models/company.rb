@@ -9,5 +9,4 @@ class Company < ActiveRecord::Base
   def self.oldest_company
     order(:founding_year).first
   end
-
 end
